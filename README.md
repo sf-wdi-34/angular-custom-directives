@@ -1,9 +1,9 @@
 # <img src="https://cloud.githubusercontent.com/assets/7833470/10899314/63829980-8188-11e5-8cdd-4ded5bcb6e36.png" height="60"> Writing Custom Directives
 
 ### Objectives
-- Describe the different types of custom directives available
-- Create a custom directive
 - Explain why custom directives are valuable
+- Describe the options for configuring custom directives
+- Create a custom directive
 
 ### Preparation
 
