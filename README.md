@@ -17,9 +17,9 @@ As you've seen by now, a huge amount of the code you work with in Angular are di
 
 While we've been getting good at using the directives that come with Angular, it's time to start seeing what we can do if we start making some up.
 
-One of the most obvious _uses_ of this is when you've got repetitive code to render some information or data. If you're using a bunch of tags all over the place, it's a simple DRY principle – you might forget a tag or decide to change something and have to change it in a million places.
+One of the most obvious _uses_ of this is when you've got repetitive code to render some information or data. If you're repeating a set of similar markup (or a component) on several different pages, it's a simple DRY principle to consolidate that code into one place. Otherwise, you might forget a tag in one place or decide to change something and have to change it several places.
 
-By extracting it to a custom directive, we can just reference that directive whenever we need to use it and not worry about repeating the code to render it.
+By extracting your component to a custom directive, we can just reference that directive whenever we need to use it and not worry about repeating the code to render it.
 
 #### Real World Example
 
