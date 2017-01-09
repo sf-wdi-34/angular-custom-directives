@@ -128,7 +128,7 @@ You can choose to have just one, all of the above, or any combination you like. 
 For ours, let's play with just an element.
 
 ```js
-function wdiCard(){
+function CardDirective(){
   var directive = {
     restrict: 'E'
   };
@@ -164,7 +164,7 @@ Quickly `touch templates/cardDirective.html` or some similarly obvious-named tem
 In `scripts/cardDirective.js`, we can add our option:
 
 ```js
-function wdiCard(){
+function CardDirective(){
   var directive = {
     //'A' == attribute, 'E' == element, 'C' == class
     restrict: 'E',
@@ -214,7 +214,7 @@ See, `<wdi-card></wdi-card>` is gone, it's been replaced with the longer-form te
 Let's say we like the replace option for our example. We simply add `replace: true` to our directive definition object:
 
 ```js
-function wdiCard(){
+function CardDirective(){
   var directive = {
     restrict: 'E',
     replace: true,
@@ -277,9 +277,9 @@ And finally, in `js/app.js`:
 ```js
 angular
   .module('CardsAgainstAssembly',[])
-  .directive('card', CardViewDirective);
+  .directive('card', CardDirective);
 
-function CardViewDirective(){
+function CardDirective(){
   var directive = {
     //'A' == attribute, 'E' == element, 'C' == class, 'M' == comment
     restrict : 'E',
