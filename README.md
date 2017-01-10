@@ -49,7 +49,11 @@ Let's see if we can make something similar, wrapped up in our own custom HTML el
 
 Take five minutes and inspect our starter code in this repo's `starter-code/app/` directory. You'll see a pretty normal Angular app, and since we're repeating using those cards, and there's a few consistent tags we're repeating every time we render a card, we're going to experiment with making those cards a custom-defined directive.
 
+<!--
 _Note: if you are going to run this code locally on Chrome, you'll need to run `npm init` and then install [http-server](https://www.npmjs.com/package/http-server) with `npm install http-server -g`. To run locally, simply use the command `http-server`._
+-->
+
+_Note: if you are going to run this code locally on Chrome, you can simply run `python -m SimpleHTTPServer` in terminal._
 
 <img width="965" alt="Cards Against Assembly" src="https://cloud.githubusercontent.com/assets/25366/9666972/05a2f348-522e-11e5-8f6c-7c503032eff4.png">
 
