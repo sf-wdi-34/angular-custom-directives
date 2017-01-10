@@ -254,7 +254,7 @@ That's where `scope` comes in, and this lets us decide what attributes our eleme
 Try this. In your `index.html`, adjust our `<card>` element to say:
 
 ```html
-<card question="{{card.question}}"></card>
+<wdi-card question="{{card.question}}"></wdi-card>
 ```
 
 In context, you'll see that the `ng-repeat` is giving us the variable `card`, and we're actually just rendering that out as a string. But we've decided we want to have an attribute called `question` to pass data through. We made that up, it's appropriate to our example, but it can be anything.
@@ -277,7 +277,7 @@ And finally, in `js/app.js`:
 ```js
 angular
   .module('CardsAgainstAssembly',[])
-  .directive('card', CardDirective);
+  .directive('wdiCard', CardDirective);
 
 function CardDirective(){
   var directive = {
@@ -293,26 +293,26 @@ function CardDirective(){
 }
 ```
 
-In `scope`, we just define an object. The key is whatever want the attribute on the element to be named. So if we want `<card bagel=""></card>`, then we'd need a key named `bagel` in our scope object.
+In `scope`, we just define an object. The key is whatever want the attribute on the element to be named. So if we want `<wdi-card bagel=""></wdi-card>`, then we'd need a key named `bagel` in our scope object.
 
 #### The Different Types of Scope for a Directive
 The _value_ is one of 3 options.
 
 ```js
 scope: {
-  ngModel: '=',     // Bind the ngModel to the object given
-  onSend: '&',      // Pass a reference to the method
-  fromName: '@'     // Store the string associated by fromName
+  sendTo: '=',     // Bind the ngModel to the object given
+  onSend: '&',      // Pass a reference to an expression or function
+  fromName: '@'     // Store the string associated with fromName
 }
 ```
 
 The corresponding options would look like:
 
 ```html
-<div scope-example ng-model="to" on-send="sendMail(email)" from-name="ari@fullstack.io" />
+<div scope-example send-to="to" on-send="sendMail(email)" from-name="ari@fullstack.io" />
 ```
 
-The `=` is a mechanism for binding data that might change; the `&` is for passing a reference to a function you might want to call; and the `@` is simply storing a string & passing it through to the template.
+The `=` is a mechanism for binding data that might change (often objects); the `&` is for passing a reference to a function you might want to call; and the `@` is simply storing a string & passing it through to the template.
 
 #### Since we've decided to use `@`/strings, let's try it!
 
@@ -324,7 +324,7 @@ Somewhere _outside_ the context of the controller, let's say just above the foot
 <!-- ... -->
 </section>
 <hr/>
-<card question="Why is Angular so awesome?"></card>
+<wdi-card question="Why is Angular so awesome?"></wdi-card>
 <footer>
 <!-- ... -->
 ```
@@ -336,17 +336,18 @@ Would you look at that? Our own custom directive - a reusable, semantic HTML com
 
 ### A deeper dive on the directive definition object
 
-Check out this[directive definition object cheat sheet from egghead.io.](https://d2eip9sf3oo6c2.cloudfront.net/pdf/egghead-io-directive-definition-object-cheat-sheet.pdf). Specifically look at the `controller` and `link` options that can add functionality to a directive.
+Check out this [directive definition object cheat sheet from egghead.io](https://d2eip9sf3oo6c2.cloudfront.net/pdf/egghead-io-directive-definition-object-cheat-sheet.pdf). Specifically look at the `controller` and `link` options that can add functionality to a directive.
 
 We can use directives as simple templating as we did above with the card directive, but we can also make directives that have their own behaviors!
 
 Our code can be separated into small, organized pieces that have a single representation in the code as a directive.
 
+<!--
 ### Integrate a third party directive
 
-UI Bootstrap provides a wide array of useful directives that can bring cool functionality to your applications! Let's integrate the [ui bootstrap rating widget](https://angular-ui.github.io/bootstrap/#/rating) into our Cards Against Assembly app.
+UI Bootstrap provides a wide array of useful directives that can bring cool functionality to your applications! Let's integrate the [ui bootstrap rating widget](https://angular-ui.github.io/bootstrap/#/rating) into our Cards Against Assembly app. -->
 
-#### Resolving dependencies
+<!-- #### Resolving dependencies
 
 UI Bootstrap has a handful of dependencies that we need to integrate before this directive will work.
 
@@ -370,7 +371,7 @@ Include these dependencies in app.js as well
 ```javascript
 angular.module('CardsAgainstAssembly', ['ngAnimate', 'ngSanitize','ui.bootstrap']);
 
-```
+``` -->
 
 #### Building a controller
 
