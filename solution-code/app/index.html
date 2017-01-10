@@ -14,10 +14,10 @@
     <body>
       <div class="container">
 
-        <header class='navbar'>
+        <header class='navbar' ng-controller="PlayersController as playersCtrl">
           <h1 class='pull-left'>Cards Against Assembly</h1>
-
-          <scores></scores>
+          <!-- below is a scoreboard directive that takes in an array of players -->
+          <wdi-scoreboard player-list="playersCtrl.players"></wdi-scoreboard>
         </header>
 
 

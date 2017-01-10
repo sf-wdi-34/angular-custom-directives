@@ -3,7 +3,7 @@ angular
   .controller('CardsController', CardsController)
   .controller('PlayersController', PlayersController)
   .directive('wdiCard', CardDirective)
-  .directive('scores', ScoresDirective);
+  .directive('wdiScoreboard', ScoresDirective);
 
 function CardsController() {
   console.log("blarg");
@@ -49,11 +49,12 @@ function PlayersController(){
 
 function ScoresDirective(){
   var directive = {
-    controller: PlayersController,
-    controllerAs: 'vm',
     //'A' == attribute, 'E' == element, 'C' == class, 'M' == comment
     restrict : 'E',
     replace : true,
+    scope: {
+      playerList: '='
+    },
     templateUrl :  "./templates/_scoresView.html"
   };
   return directive;
