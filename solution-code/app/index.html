@@ -22,18 +22,18 @@
 
 
 
-        <section id="cards" class='container-fluid' ng-controller="CardsController as cards">
+        <section id="cards" class='container-fluid' ng-controller="CardsController as cardsCtrl">
           <div class='row'>
 
-            <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cards.questions" >
-              <card question="{{card.question}}"></card>
+            <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cardsCtrl.questions" >
+              <wdi-card question="{{card.question}}"></wdi-card>
             </div>
 
         </section>
 
         <hr/>
          <div class='col-sm-6 col-md-6 col-lg-4'>
-           <card question="Why is Angular so awesome?"></card>
+           <wdi-card question="Why is Angular so awesome?"></wdi-card>
          </div>
       </div>
 
