@@ -20,12 +20,10 @@ function CardsController() {
 
 function CardDirective() {
   var directive = {
-    controllerAs: 'vm',
-    controller: CardsController,
     //'A' == attribute, 'E' == element, 'C' == class, 'M' == comment
     restrict : 'E',
     replace : true,
-    templateUrl :  "./templates/_cardView.html",
+    templateUrl :  "./templates/cardDirective.html",
     scope : {
         question: '@'
     }
@@ -55,7 +53,7 @@ function ScoresDirective(){
     scope: {
       playerList: '='
     },
-    templateUrl :  "./templates/_scoresView.html"
+    templateUrl :  "./templates/scoresDirective.html"
   };
   return directive;
 }
